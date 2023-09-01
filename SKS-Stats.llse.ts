@@ -550,7 +550,7 @@ mc.listen('onRide', (entity1, entity2) => {
 mc.listen('onAttackEntity', (player, entity, damage) => {
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
-    playerDt.addCustomDamage(CustomDamageType.dealt, damage)
+    playerDt.addCustomDamage(CustomDamageType.dealt, Math.round(damage * 10))
 })
 mc.listen('onMobHurt', (mob, source, damage, cause) => {
     if (!mob.isPlayer()) return
@@ -558,7 +558,7 @@ mc.listen('onMobHurt', (mob, source, damage, cause) => {
     if (player == null) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
-    playerDt.addCustomDamage(CustomDamageType.taken, damage)
+    playerDt.addCustomDamage(CustomDamageType.taken, Math.round(damage * 10))
 })
 
 //监听玩家与方块交互

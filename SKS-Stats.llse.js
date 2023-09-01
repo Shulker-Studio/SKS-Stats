@@ -560,7 +560,7 @@ mc.listen('onAttackEntity', function (player, entity, damage) {
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
-    playerDt.addCustomDamage(CustomDamageType.dealt, damage);
+    playerDt.addCustomDamage(CustomDamageType.dealt, Math.round(damage * 10));
 });
 mc.listen('onMobHurt', function (mob, source, damage, cause) {
     if (!mob.isPlayer())
@@ -571,7 +571,7 @@ mc.listen('onMobHurt', function (mob, source, damage, cause) {
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
-    playerDt.addCustomDamage(CustomDamageType.taken, damage);
+    playerDt.addCustomDamage(CustomDamageType.taken, Math.round(damage * 10));
 });
 //监听玩家与方块交互
 mc.listen('onBlockInteracted', function (player, block) {

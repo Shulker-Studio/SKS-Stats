@@ -519,7 +519,8 @@ class PlayerData {
     private _getDis(pos1: FloatPos, pos2: FloatPos) {
         let dx = Math.abs(pos1.x - pos2.x) * 100
         let dy = Math.abs(pos1.y - pos2.y) * 100
-        let dis = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2))
+        let dz = Math.abs(pos1.z - pos2.z) * 100
+        let dis = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2) + Math.pow(dz, 2))
         return Math.round(dis)
     }
     addMove(player: Player) {

@@ -3,7 +3,7 @@
 ll.registerPlugin(
     /* name */ "SKS-Stats",
     /* introduction */ "",
-    /* version */[0, 0, 3],
+    /* version */[0, 0, 4],
     /* otherInformation */ {}
 );
 export function a() { }
@@ -682,11 +682,13 @@ let foods = [
 ]
 //监听玩家进服
 mc.listen('onJoin', (player) => {
+    if(player.isSimulatedPlayer()) return
     let playerData = new PlayerData(player)
     playersMap.set(player.uuid, playerData)
 })
 //监听玩家退服
 mc.listen('onLeft', (player) => {
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addCustomOthers(CustomOtherType.leave_game)
@@ -696,12 +698,14 @@ mc.listen('onLeft', (player) => {
 //监听玩家破坏方块
 mc.listen('onDestroyBlock', (player, block) => {
     if (player.isCreative) return
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addStats(StatsType.Mined, block.type)
 })
 //监听玩家捡起物品
 mc.listen('onTakeItem', (player, entity, item) => {
+    if(player.isSimulatedPlayer()) return
     if (!item) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
@@ -709,12 +713,14 @@ mc.listen('onTakeItem', (player, entity, item) => {
 })
 //监听玩家扔出物品
 mc.listen('onDropItem', (player, item) => {
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addStats(StatsType.Dropped, item.type, item.count)
     playerDt.addCustomOthers(CustomOtherType.drop)
 })
 mc.listen('onPlayerDie', (player, source) => {
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     if (source != null) {
@@ -729,6 +735,7 @@ mc.listen('onMobDie', (mob, source, cause) => {
     if (source == null) return
     let player = source.toPlayer()
     if (player == null) return
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     if (mob.type === 'minecraft:player') {
@@ -739,6 +746,7 @@ mc.listen('onMobDie', (mob, source, cause) => {
     }
 })
 mc.listen('onChangeSprinting', (player, sprinting) => {
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.changeSprinting(sprinting)
@@ -747,6 +755,7 @@ mc.listen('onRide', (entity1, entity2) => {
     if (!entity1.isPlayer()) return
     let player = entity1.toPlayer()
     if (player == null) return
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.setRidingEntity(entity2.type)
@@ -757,6 +766,7 @@ mc.listen('onRide', (entity1, entity2) => {
  * 吸收/抵挡伤害
  */
 mc.listen('onAttackEntity', (player, entity, damage) => {
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addCustomDamage(CustomDamageType.dealt, Math.round(damage * 10))
@@ -765,6 +775,7 @@ mc.listen('onMobHurt', (mob, source, damage, cause) => {
     if (!mob.isPlayer()) return
     let player = mob.toPlayer()
     if (player == null) return
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addCustomDamage(CustomDamageType.taken, Math.round(damage * 10))
@@ -772,6 +783,7 @@ mc.listen('onMobHurt', (mob, source, damage, cause) => {
 
 //监听玩家与方块交互
 mc.listen('onBlockInteracted', (player, block) => {
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     let type = block.type.split(':')
@@ -823,6 +835,7 @@ mc.listen('onBlockInteracted', (player, block) => {
 mc.listen('onOpenContainer', (player, block) => {
     //工作台合成
     if (block.type === 'minecraft:crafting_table') {
+        if(player.isSimulatedPlayer()) return
         let playerDt = playersMap.get(player.uuid)
         if (typeof playerDt === 'undefined') return
         playerDt.addCustomInteract(CustomInteractType.crafting_table)
@@ -830,17 +843,20 @@ mc.listen('onOpenContainer', (player, block) => {
 })
 //监听玩家放置方块
 mc.listen('afterPlaceBlock', (player, block) => {
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addStats(StatsType.Used, block.type)
 })
 mc.listen('onAte', (player, item) => {
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addStats(StatsType.Used, item.type)
 })
 //监听玩家获得效果(袭击)
 mc.listen('onEffectAdded', (player, effectName) => {
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     if (effectName === 'minecraft:effect.bad_men') playerDt.addCustomOthers(CustomOtherType.raid_trigger)
@@ -849,6 +865,7 @@ mc.listen('onEffectAdded', (player, effectName) => {
 //监听玩家点击方块(音符盒)
 mc.listen('onStartDestroyBlock', (player, block) => {
     if (block.type === 'minecraft:noteblock') {
+        if(player.isSimulatedPlayer()) return
         let playerDt = playersMap.get(player.uuid)
         if (typeof playerDt === 'undefined') return
         playerDt.addCustomOthers(CustomOtherType.play_noteblock)
@@ -856,6 +873,7 @@ mc.listen('onStartDestroyBlock', (player, block) => {
 })
 //监听玩家使用物品
 mc.listen('onUseItemOn', (player, item, block) => {
+    if(player.isSimulatedPlayer()) return
     switch (block.type) {
         case 'minecraft:cake':
             cakeMap.add(block.pos, player.uuid)
@@ -983,6 +1001,7 @@ mc.listen('onProjectileHitBlock', () => {
      */
 })
 mc.listen('onBedEnter', (player, pos) => {
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addCustomOthers(CustomOtherType.sleep_in_bed)
@@ -993,6 +1012,7 @@ mc.listen('onBedEnter', (player, pos) => {
 
 // })
 mc.listen('onJump', (player) => {
+    if(player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addCustomOthers(CustomOtherType.jump)

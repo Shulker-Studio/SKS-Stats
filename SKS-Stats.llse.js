@@ -14,7 +14,7 @@ exports.a = void 0;
 ll.registerPlugin(
 /* name */ "SKS-Stats", 
 /* introduction */ "", 
-/* version */ [0, 0, 1], 
+/* version */ [0, 0, 4], 
 /* otherInformation */ {});
 function a() { }
 exports.a = a;
@@ -27,6 +27,214 @@ function debug() {
         log.apply(void 0, __spreadArray(["[DEBUG]"], data, false));
     }
 }
+var bb = {
+    zh_CN: {
+        //custom
+        "minecraft:animals_bred": "繁殖动物次数",
+        "minecraft:clean_armor": "清洗盔甲次数",
+        "minecraft:clean_banner": "清洗旗帜次数",
+        "minecraft:open_barrel": "木桶打开次数",
+        "minecraft:bell_ring": "鸣钟次数",
+        "minecraft:eat_cake_slice": "吃掉的蛋糕片数",
+        "minecraft:fill_cauldron": "炼药锅装水次数",
+        "minecraft:open_chest": "箱子打开次数",
+        "minecraft:damage_absorbed": "吸收的伤害",
+        "minecraft:damage_blocked_by_shield": "盾牌抵挡的伤害",
+        "minecraft:damage_dealt": "造成伤害",
+        "minecraft:damage_dealt_absorbed": "造成伤害（被吸收）",
+        "minecraft:damage_dealt_resisted": "造成伤害（被抵挡）",
+        "minecraft:damage_resisted": "抵挡的伤害",
+        "minecraft:damage_taken": "受到伤害",
+        "minecraft:inspect_dispenser": "搜查发射器次数",
+        "minecraft:boat_one_cm": "坐船移动距离",
+        "minecraft:aviate_one_cm": "鞘翅滑行距离",
+        "minecraft:horse_one_cm": "骑马移动距离",
+        "minecraft:minecart_one_cm": "坐矿车移动距离",
+        "minecraft:pig_one_cm": "骑猪移动距离",
+        "minecraft:strider_one_cm": "骑炽足兽移动距离",
+        "minecraft:climb_one_cm": "已攀爬距离",
+        "minecraft:crouch_one_cm": "潜行距离",
+        "minecraft:fall_one_cm": "摔落高度",
+        "minecraft:fly_one_cm": "飞行距离",
+        "minecraft:sprint_one_cm": "疾跑距离",
+        "minecraft:swim_one_cm": "游泳距离",
+        "minecraft:walk_one_cm": "行走距离",
+        "minecraft:walk_on_water_one_cm": "水面行走距离",
+        "minecraft:walk_under_water_one_cm": "水下行走距离",
+        "minecraft:inspect_dropper": "搜查投掷器次数",
+        "minecraft:open_enderchest": "末影箱打开次数",
+        "minecraft:fish_caught": "捕鱼数",
+        "minecraft:leave_game": "游戏退出次数",
+        "minecraft:inspect_hopper": "搜查漏斗次数",
+        "minecraft:interact_with_anvil": "与铁砧交互次数",
+        "minecraft:interact_with_beacon": "与信标交互次数",
+        "minecraft:interact_with_blast_furnace": "与高炉交互次数",
+        "minecraft:interact_with_brewingstand": "与酿造台交互次数",
+        "minecraft:interact_with_campfire": "与营火交互次数",
+        "minecraft:interact_with_cartography_table": "与制图台交互次数",
+        "minecraft:interact_with_crafting_table": "与工作台交互次数",
+        "minecraft:interact_with_furnace": "与熔炉交互次数",
+        "minecraft:interact_with_grindstone": "与砂轮交互次数",
+        "minecraft:interact_with_lectern": "与讲台交互次数",
+        "minecraft:interact_with_loom": "与织布机交互次数",
+        "minecraft:interact_with_smithing_table": "与锻造台交互次数",
+        "minecraft:interact_with_smoker": "与烟熏炉交互次数",
+        "minecraft:interact_with_stonecutter": "与切石机交互次数",
+        "minecraft:drop": "物品掉落",
+        "minecraft:enchant_item": "物品附魔次数",
+        "minecraft:jump": "跳跃次数",
+        "minecraft:mob_kills": "生物击杀数",
+        "minecraft:play_record": "播放唱片数",
+        "minecraft:play_noteblock": "音符盒播放次数",
+        "minecraft:tune_noteblock": "音符盒调音次数",
+        "minecraft:deaths": "死亡次数",
+        "minecraft:pot_flower": "盆栽种植数",
+        "minecraft:player_kills": "玩家击杀数",
+        "minecraft:raid_trigger": "触发袭击次数",
+        "minecraft:raid_win": "袭击胜利次数",
+        "minecraft:clean_shulker_box": "潜影盒清洗次数",
+        "minecraft:open_shulker_box": "潜影盒打开次数",
+        "minecraft:time_since_death": "自上次死亡",
+        "minecraft:time_since_rest": "自上次入眠",
+        "minecraft:sneak_time": "潜行时间",
+        "minecraft:talked_to_villager": "村民交互次数",
+        "minecraft:target_hit": "击中标靶次数",
+        "minecraft:play_time": "游戏时间",
+        "minecraft:total_world_time": "世界打开时间",
+        "minecraft:sleep_in_bed": "躺在床上的次数",
+        "minecraft:traded_with_villager": "村民交易次数",
+        "minecraft:trigger_trapped_chest": "陷阱箱触发次数",
+        "minecraft:use_cauldron": "从炼药锅取水次数",
+        //实体
+        "minecraft:agent": "智能体",
+        "minecraft:allay": "悦灵",
+        "minecraft:area_effect_cloud": "区域效果云",
+        "minecraft:armor_stand": "盔甲架",
+        "minecraft:arrow": "箭",
+        "minecraft:axolotl": "美西螈",
+        "minecraft:balloon": "气球",
+        "minecraft:bat": "蝙蝠",
+        "minecraft:bee": "蜜蜂",
+        "minecraft:blaze": "烈焰人",
+        "minecraft:boat": "船",
+        "minecraft:camel": "骆驼",
+        "minecraft:cat": "流浪猫",
+        "minecraft:cave_spider": "洞穴蜘蛛",
+        "minecraft:chalkboard": "黑板",
+        "minecraft:chest_boat": "运输船",
+        "minecraft:chest_minecart": "运输矿车",
+        "minecraft:chicken": "鸡",
+        "minecraft:cod": "鳕鱼",
+        "minecraft:command_block_minecart": "命令方块矿车",
+        "minecraft:cow": "牛",
+        "minecraft:creeper": "苦力怕",
+        "minecraft:dolphin": "海豚",
+        "minecraft:donkey": "驴",
+        "minecraft:dragon_fireball": "末影龙火球",
+        "minecraft:drowned": "溺尸",
+        "minecraft:egg": "鸡蛋",
+        "minecraft:elder_guardian": "远古守卫者",
+        "minecraft:elder_guardian_ghost": "远古守卫者幽灵",
+        "minecraft:ender_crystal": "末地水晶",
+        "minecraft:ender_dragon": "末影龙",
+        "minecraft:ender_pearl": "末影珍珠",
+        "minecraft:enderman": "末影人",
+        "minecraft:endermite": "末影螨",
+        "minecraft:evocation_fang": "尖牙",
+        "minecraft:evocation_illager": "唤魔者",
+        "minecraft:eye_of_ender_signal": "末影之眼",
+        "minecraft:falling_block": "下落的方块",
+        "minecraft:fireball": "恶魂火球",
+        "minecraft:fireworks_rocket": "烟花火箭",
+        "minecraft:fishing_hook": "浮漂",
+        "minecraft:fox": "狐狸",
+        "minecraft:frog": "青蛙",
+        "minecraft:ghast": "恶魂",
+        "minecraft:glow_squid": "发光鱿鱼",
+        "minecraft:goat": "山羊",
+        "minecraft:guardian": "守卫者",
+        "minecraft:hoglin": "疣猪兽",
+        "minecraft:hopper_minecart": "漏斗矿车",
+        "minecraft:horse": "马",
+        "minecraft:husk": "尸壳",
+        "minecraft:ice_bomb": "冰弹",
+        "minecraft:iron_golem": "铁傀儡",
+        "minecraft:item": "掉落物",
+        "minecraft:leash_knot": "拴绳结",
+        "minecraft:lightning_bolt": "闪电",
+        "minecraft:lingering_potion": "滞留药水",
+        "minecraft:llama": "羊驼",
+        "minecraft:llama_spit": "羊驼唾沫",
+        "minecraft:magma_cube": "岩浆怪",
+        "minecraft:minecart": "矿车",
+        "minecraft:mooshroom": "哞菇",
+        "minecraft:moving_block": "移动的方块",
+        "minecraft:mule": "骡",
+        "minecraft:npc": "NPC",
+        "minecraft:ocelot": "豹猫",
+        "minecraft:painting": "画",
+        "minecraft:panda": "熊猫",
+        "minecraft:parrot": "鹦鹉",
+        "minecraft:phantom": "幻翼",
+        "minecraft:pig": "猪",
+        "minecraft:piglin": "猪灵",
+        "minecraft:piglin_brute": "猪灵蛮兵",
+        "minecraft:pillager": "掠夺者",
+        "minecraft:player": "玩家",
+        "minecraft:polar_bear": "北极熊",
+        "minecraft:pufferfish": "河豚",
+        "minecraft:rabbit": "兔子",
+        "minecraft:ravager": "劫掠兽",
+        "minecraft:salmon": "鲑鱼",
+        "minecraft:sheep": "绵羊",
+        "minecraft:shield": "盾牌",
+        "minecraft:shulker": "潜影贝",
+        "minecraft:shulker_bullet": "潜影弹",
+        "minecraft:silverfish": "蠹虫",
+        "minecraft:skeleton": "骷髅",
+        "minecraft:skeleton_horse": "骷髅马",
+        "minecraft:slime": "史莱姆",
+        "minecraft:small_fireball": "小火球",
+        "minecraft:sniffer": "嗅探兽",
+        "minecraft:snow_golem": "雪傀儡",
+        "minecraft:snowball": "雪球",
+        "minecraft:spider": "蜘蛛",
+        "minecraft:splash_potion": "喷溅药水",
+        "minecraft:squid": "鱿鱼",
+        "minecraft:stray": "流浪者",
+        "minecraft:strider": "炽足兽",
+        "minecraft:tadpole": "蝌蚪",
+        "minecraft:thrown_trident": "三叉戟",
+        "minecraft:tnt": "点燃的TNT",
+        "minecraft:tnt_minecart": "TNT矿车",
+        "minecraft:trader_llama": "行商羊驼",
+        "minecraft:tripod_camera": "相机",
+        "minecraft:tropicalfish": "热带鱼",
+        "minecraft:turtle": "海龟",
+        "minecraft:vex": "恼鬼",
+        "minecraft:villager": "旧版村民",
+        "minecraft:villager_v2": "村民",
+        "minecraft:vindicator": "卫道士",
+        "minecraft:wandering_trader": "流浪商人",
+        "minecraft:warden": "监守者",
+        "minecraft:witch": "女巫",
+        "minecraft:wither": "凋灵",
+        "minecraft:wither_skeleton": "凋灵骷髅",
+        "minecraft:wither_skull": "凋灵之首",
+        "minecraft:wither_skull_dangerous": "蓝色凋灵之首",
+        "minecraft:wolf": "狼",
+        "minecraft:xp_bottle": "附魔之瓶",
+        "minecraft:xp_orb": "经验球",
+        "minecraft:zoglin": "僵尸疣猪兽",
+        "minecraft:zombie": "僵尸",
+        "minecraft:zombie_horse": "僵尸马",
+        "minecraft:zombie_pigman": "僵尸猪灵",
+        "minecraft:zombie_villager": "僵尸村民",
+        "minecraft:zombie_villager_v2": "僵尸村民"
+        //item
+    }
+};
+
 function getLevelName() {
     var r = 'SKS';
     var data = File.readFrom(SERVER_PROPERTIES_PATH);
@@ -307,7 +515,8 @@ var PlayerData = /** @class */ (function () {
     PlayerData.prototype._getDis = function (pos1, pos2) {
         var dx = Math.abs(pos1.x - pos2.x) * 100;
         var dy = Math.abs(pos1.y - pos2.y) * 100;
-        var dis = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+        var dz = Math.abs(pos1.z - pos2.z) * 100;
+        var dis = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2) + Math.pow(dz, 2));
         return Math.round(dis);
     };
     PlayerData.prototype.addMove = function (player) {
@@ -317,6 +526,8 @@ var PlayerData = /** @class */ (function () {
          *  摔落高度
          *  水面上下游走距离
          */
+        if (typeof player.pos === 'undefined')
+            return;
         if (this._oldPos.dimid !== player.pos.dimid) {
             return this._setOldStates(player);
         }
@@ -465,11 +676,15 @@ var foods = [
 ];
 //监听玩家进服
 mc.listen('onJoin', function (player) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerData = new PlayerData(player);
     playersMap.set(player.uuid, playerData);
 });
 //监听玩家退服
 mc.listen('onLeft', function (player) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -481,6 +696,8 @@ mc.listen('onLeft', function (player) {
 mc.listen('onDestroyBlock', function (player, block) {
     if (player.isCreative)
         return;
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -488,6 +705,8 @@ mc.listen('onDestroyBlock', function (player, block) {
 });
 //监听玩家捡起物品
 mc.listen('onTakeItem', function (player, entity, item) {
+    if (player.isSimulatedPlayer())
+        return;
     if (!item)
         return;
     var playerDt = playersMap.get(player.uuid);
@@ -497,6 +716,8 @@ mc.listen('onTakeItem', function (player, entity, item) {
 });
 //监听玩家扔出物品
 mc.listen('onDropItem', function (player, item) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -504,6 +725,8 @@ mc.listen('onDropItem', function (player, item) {
     playerDt.addCustomOthers(CustomOtherType.drop);
 });
 mc.listen('onPlayerDie', function (player, source) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -523,6 +746,8 @@ mc.listen('onMobDie', function (mob, source, cause) {
     var player = source.toPlayer();
     if (player == null)
         return;
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -535,6 +760,8 @@ mc.listen('onMobDie', function (mob, source, cause) {
     }
 });
 mc.listen('onChangeSprinting', function (player, sprinting) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -545,6 +772,8 @@ mc.listen('onRide', function (entity1, entity2) {
         return;
     var player = entity1.toPlayer();
     if (player == null)
+        return;
+    if (player.isSimulatedPlayer())
         return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
@@ -557,6 +786,8 @@ mc.listen('onRide', function (entity1, entity2) {
  * 吸收/抵挡伤害
  */
 mc.listen('onAttackEntity', function (player, entity, damage) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -568,6 +799,8 @@ mc.listen('onMobHurt', function (mob, source, damage, cause) {
     var player = mob.toPlayer();
     if (player == null)
         return;
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -575,6 +808,8 @@ mc.listen('onMobHurt', function (mob, source, damage, cause) {
 });
 //监听玩家与方块交互
 mc.listen('onBlockInteracted', function (player, block) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -627,6 +862,8 @@ mc.listen('onBlockInteracted', function (player, block) {
 mc.listen('onOpenContainer', function (player, block) {
     //工作台合成
     if (block.type === 'minecraft:crafting_table') {
+        if (player.isSimulatedPlayer())
+            return;
         var playerDt = playersMap.get(player.uuid);
         if (typeof playerDt === 'undefined')
             return;
@@ -635,12 +872,16 @@ mc.listen('onOpenContainer', function (player, block) {
 });
 //监听玩家放置方块
 mc.listen('afterPlaceBlock', function (player, block) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
     playerDt.addStats(StatsType.Used, block.type);
 });
 mc.listen('onAte', function (player, item) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -648,6 +889,8 @@ mc.listen('onAte', function (player, item) {
 });
 //监听玩家获得效果(袭击)
 mc.listen('onEffectAdded', function (player, effectName) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -659,6 +902,8 @@ mc.listen('onEffectAdded', function (player, effectName) {
 //监听玩家点击方块(音符盒)
 mc.listen('onStartDestroyBlock', function (player, block) {
     if (block.type === 'minecraft:noteblock') {
+        if (player.isSimulatedPlayer())
+            return;
         var playerDt = playersMap.get(player.uuid);
         if (typeof playerDt === 'undefined')
             return;
@@ -667,6 +912,8 @@ mc.listen('onStartDestroyBlock', function (player, block) {
 });
 //监听玩家使用物品
 mc.listen('onUseItemOn', function (player, item, block) {
+    if (player.isSimulatedPlayer())
+        return;
     switch (block.type) {
         case 'minecraft:cake':
             cakeMap.add(block.pos, player.uuid);
@@ -809,6 +1056,8 @@ mc.listen('onProjectileHitBlock', function () {
      */
 });
 mc.listen('onBedEnter', function (player, pos) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -819,6 +1068,8 @@ mc.listen('onBedEnter', function (player, pos) {
 // mc.listen('onUseBucketTake', () => {
 // })
 mc.listen('onJump', function (player) {
+    if (player.isSimulatedPlayer())
+        return;
     var playerDt = playersMap.get(player.uuid);
     if (typeof playerDt === 'undefined')
         return;
@@ -829,3 +1080,6 @@ mc.listen('onTick', function () {
         v.onTick();
     });
 });
+function getPlayerData() {
+}
+ll.exports(getPlayerData, 'SKS-Score', 'getPlayerData');

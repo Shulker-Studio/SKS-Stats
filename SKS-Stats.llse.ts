@@ -3,7 +3,7 @@
 ll.registerPlugin(
     /* name */ "SKS-Stats",
     /* introduction */ "",
-    /* version */[0, 0, 4],
+    /* version */[0, 0, 5],
     /* otherInformation */ {}
 );
 export function a() { }
@@ -12,214 +12,7 @@ function debug(...data: any[]) {
         log(`[DEBUG]`, ...data)
     }
 }
-let bb = {
-    zh_CN: {
-        //custom
-        "minecraft:animals_bred": "繁殖动物次数",
-        "minecraft:clean_armor": "清洗盔甲次数",
-        "minecraft:clean_banner": "清洗旗帜次数",
-        "minecraft:open_barrel": "木桶打开次数",
-        "minecraft:bell_ring": "鸣钟次数",
-        "minecraft:eat_cake_slice": "吃掉的蛋糕片数",
-        "minecraft:fill_cauldron": "炼药锅装水次数",
-        "minecraft:open_chest": "箱子打开次数",
-        "minecraft:damage_absorbed": "吸收的伤害",
-        "minecraft:damage_blocked_by_shield": "盾牌抵挡的伤害",
-        "minecraft:damage_dealt": "造成伤害",
-        "minecraft:damage_dealt_absorbed": "造成伤害（被吸收）",
-        "minecraft:damage_dealt_resisted": "造成伤害（被抵挡）",
-        "minecraft:damage_resisted": "抵挡的伤害",
-        "minecraft:damage_taken": "受到伤害",
-        "minecraft:inspect_dispenser": "搜查发射器次数",
-        "minecraft:boat_one_cm": "坐船移动距离",
-        "minecraft:aviate_one_cm": "鞘翅滑行距离",
-        "minecraft:horse_one_cm": "骑马移动距离",
-        "minecraft:minecart_one_cm": "坐矿车移动距离",
-        "minecraft:pig_one_cm": "骑猪移动距离",
-        "minecraft:strider_one_cm": "骑炽足兽移动距离",
-        "minecraft:climb_one_cm": "已攀爬距离",
-        "minecraft:crouch_one_cm": "潜行距离",
-        "minecraft:fall_one_cm": "摔落高度",
-        "minecraft:fly_one_cm": "飞行距离",
-        "minecraft:sprint_one_cm": "疾跑距离",
-        "minecraft:swim_one_cm": "游泳距离",
-        "minecraft:walk_one_cm": "行走距离",
-        "minecraft:walk_on_water_one_cm": "水面行走距离",
-        "minecraft:walk_under_water_one_cm": "水下行走距离",
-        "minecraft:inspect_dropper": "搜查投掷器次数",
-        "minecraft:open_enderchest": "末影箱打开次数",
-        "minecraft:fish_caught": "捕鱼数",
-        "minecraft:leave_game": "游戏退出次数",
-        "minecraft:inspect_hopper": "搜查漏斗次数",
-        "minecraft:interact_with_anvil": "与铁砧交互次数",
-        "minecraft:interact_with_beacon": "与信标交互次数",
-        "minecraft:interact_with_blast_furnace": "与高炉交互次数",
-        "minecraft:interact_with_brewingstand": "与酿造台交互次数",
-        "minecraft:interact_with_campfire": "与营火交互次数",
-        "minecraft:interact_with_cartography_table": "与制图台交互次数",
-        "minecraft:interact_with_crafting_table": "与工作台交互次数",
-        "minecraft:interact_with_furnace": "与熔炉交互次数",
-        "minecraft:interact_with_grindstone": "与砂轮交互次数",
-        "minecraft:interact_with_lectern": "与讲台交互次数",
-        "minecraft:interact_with_loom": "与织布机交互次数",
-        "minecraft:interact_with_smithing_table": "与锻造台交互次数",
-        "minecraft:interact_with_smoker": "与烟熏炉交互次数",
-        "minecraft:interact_with_stonecutter": "与切石机交互次数",
-        "minecraft:drop": "物品掉落",
-        "minecraft:enchant_item": "物品附魔次数",
-        "minecraft:jump": "跳跃次数",
-        "minecraft:mob_kills": "生物击杀数",
-        "minecraft:play_record": "播放唱片数",
-        "minecraft:play_noteblock": "音符盒播放次数",
-        "minecraft:tune_noteblock": "音符盒调音次数",
-        "minecraft:deaths": "死亡次数",
-        "minecraft:pot_flower": "盆栽种植数",
-        "minecraft:player_kills": "玩家击杀数",
-        "minecraft:raid_trigger": "触发袭击次数",
-        "minecraft:raid_win": "袭击胜利次数",
-        "minecraft:clean_shulker_box": "潜影盒清洗次数",
-        "minecraft:open_shulker_box": "潜影盒打开次数",
-        "minecraft:time_since_death": "自上次死亡",
-        "minecraft:time_since_rest": "自上次入眠",
-        "minecraft:sneak_time": "潜行时间",
-        "minecraft:talked_to_villager": "村民交互次数",
-        "minecraft:target_hit": "击中标靶次数",
-        "minecraft:play_time": "游戏时间",
-        "minecraft:total_world_time": "世界打开时间",
-        "minecraft:sleep_in_bed": "躺在床上的次数",
-        "minecraft:traded_with_villager": "村民交易次数",
-        "minecraft:trigger_trapped_chest": "陷阱箱触发次数",
-        "minecraft:use_cauldron": "从炼药锅取水次数",
-        //实体
-        "minecraft:agent": "智能体",
-        "minecraft:allay": "悦灵",
-        "minecraft:area_effect_cloud": "区域效果云",
-        "minecraft:armor_stand": "盔甲架",
-        "minecraft:arrow": "箭",
-        "minecraft:axolotl": "美西螈",
-        "minecraft:balloon": "气球",
-        "minecraft:bat": "蝙蝠",
-        "minecraft:bee": "蜜蜂",
-        "minecraft:blaze": "烈焰人",
-        "minecraft:boat": "船",
-        "minecraft:camel": "骆驼",
-        "minecraft:cat": "流浪猫",
-        "minecraft:cave_spider": "洞穴蜘蛛",
-        "minecraft:chalkboard": "黑板",
-        "minecraft:chest_boat": "运输船",
-        "minecraft:chest_minecart": "运输矿车",
-        "minecraft:chicken": "鸡",
-        "minecraft:cod": "鳕鱼",
-        "minecraft:command_block_minecart": "命令方块矿车",
-        "minecraft:cow": "牛",
-        "minecraft:creeper": "苦力怕",
-        "minecraft:dolphin": "海豚",
-        "minecraft:donkey": "驴",
-        "minecraft:dragon_fireball": "末影龙火球",
-        "minecraft:drowned": "溺尸",
-        "minecraft:egg": "鸡蛋",
-        "minecraft:elder_guardian": "远古守卫者",
-        "minecraft:elder_guardian_ghost": "远古守卫者幽灵",
-        "minecraft:ender_crystal": "末地水晶",
-        "minecraft:ender_dragon": "末影龙",
-        "minecraft:ender_pearl": "末影珍珠",
-        "minecraft:enderman": "末影人",
-        "minecraft:endermite": "末影螨",
-        "minecraft:evocation_fang": "尖牙",
-        "minecraft:evocation_illager": "唤魔者",
-        "minecraft:eye_of_ender_signal": "末影之眼",
-        "minecraft:falling_block": "下落的方块",
-        "minecraft:fireball": "恶魂火球",
-        "minecraft:fireworks_rocket": "烟花火箭",
-        "minecraft:fishing_hook": "浮漂",
-        "minecraft:fox": "狐狸",
-        "minecraft:frog": "青蛙",
-        "minecraft:ghast": "恶魂",
-        "minecraft:glow_squid": "发光鱿鱼",
-        "minecraft:goat": "山羊",
-        "minecraft:guardian": "守卫者",
-        "minecraft:hoglin": "疣猪兽",
-        "minecraft:hopper_minecart": "漏斗矿车",
-        "minecraft:horse": "马",
-        "minecraft:husk": "尸壳",
-        "minecraft:ice_bomb": "冰弹",
-        "minecraft:iron_golem": "铁傀儡",
-        "minecraft:item": "掉落物",
-        "minecraft:leash_knot": "拴绳结",
-        "minecraft:lightning_bolt": "闪电",
-        "minecraft:lingering_potion": "滞留药水",
-        "minecraft:llama": "羊驼",
-        "minecraft:llama_spit": "羊驼唾沫",
-        "minecraft:magma_cube": "岩浆怪",
-        "minecraft:minecart": "矿车",
-        "minecraft:mooshroom": "哞菇",
-        "minecraft:moving_block": "移动的方块",
-        "minecraft:mule": "骡",
-        "minecraft:npc": "NPC",
-        "minecraft:ocelot": "豹猫",
-        "minecraft:painting": "画",
-        "minecraft:panda": "熊猫",
-        "minecraft:parrot": "鹦鹉",
-        "minecraft:phantom": "幻翼",
-        "minecraft:pig": "猪",
-        "minecraft:piglin": "猪灵",
-        "minecraft:piglin_brute": "猪灵蛮兵",
-        "minecraft:pillager": "掠夺者",
-        "minecraft:player": "玩家",
-        "minecraft:polar_bear": "北极熊",
-        "minecraft:pufferfish": "河豚",
-        "minecraft:rabbit": "兔子",
-        "minecraft:ravager": "劫掠兽",
-        "minecraft:salmon": "鲑鱼",
-        "minecraft:sheep": "绵羊",
-        "minecraft:shield": "盾牌",
-        "minecraft:shulker": "潜影贝",
-        "minecraft:shulker_bullet": "潜影弹",
-        "minecraft:silverfish": "蠹虫",
-        "minecraft:skeleton": "骷髅",
-        "minecraft:skeleton_horse": "骷髅马",
-        "minecraft:slime": "史莱姆",
-        "minecraft:small_fireball": "小火球",
-        "minecraft:sniffer": "嗅探兽",
-        "minecraft:snow_golem": "雪傀儡",
-        "minecraft:snowball": "雪球",
-        "minecraft:spider": "蜘蛛",
-        "minecraft:splash_potion": "喷溅药水",
-        "minecraft:squid": "鱿鱼",
-        "minecraft:stray": "流浪者",
-        "minecraft:strider": "炽足兽",
-        "minecraft:tadpole": "蝌蚪",
-        "minecraft:thrown_trident": "三叉戟",
-        "minecraft:tnt": "点燃的TNT",
-        "minecraft:tnt_minecart": "TNT矿车",
-        "minecraft:trader_llama": "行商羊驼",
-        "minecraft:tripod_camera": "相机",
-        "minecraft:tropicalfish": "热带鱼",
-        "minecraft:turtle": "海龟",
-        "minecraft:vex": "恼鬼",
-        "minecraft:villager": "旧版村民",
-        "minecraft:villager_v2": "村民",
-        "minecraft:vindicator": "卫道士",
-        "minecraft:wandering_trader": "流浪商人",
-        "minecraft:warden": "监守者",
-        "minecraft:witch": "女巫",
-        "minecraft:wither": "凋灵",
-        "minecraft:wither_skeleton": "凋灵骷髅",
-        "minecraft:wither_skull": "凋灵之首",
-        "minecraft:wither_skull_dangerous": "蓝色凋灵之首",
-        "minecraft:wolf": "狼",
-        "minecraft:xp_bottle": "附魔之瓶",
-        "minecraft:xp_orb": "经验球",
-        "minecraft:zoglin": "僵尸疣猪兽",
-        "minecraft:zombie": "僵尸",
-        "minecraft:zombie_horse": "僵尸马",
-        "minecraft:zombie_pigman": "僵尸猪灵",
-        "minecraft:zombie_villager": "僵尸村民",
-        "minecraft:zombie_villager_v2": "僵尸村民"
-        //item
 
-    }
-}
 function getLevelName() {
     let r = 'SKS'
     let data = File.readFrom(SERVER_PROPERTIES_PATH)
@@ -255,6 +48,7 @@ const DEBUG = true
 let playersMap: Map<string, PlayerData> = new Map()
 
 enum StatsType {
+    Custom,
     Mined,
     Broken,
     Crafted,
@@ -616,23 +410,50 @@ class PlayerData {
         }
         this._oldPos = player.pos
     }
-    save() {
+    getJson(type?: StatsType) {
         let { uuid, xuid, name, custom, mined, broken, crafted, used, picked_up, dropped, killed, killed_by } = this
-        let playerInfo = { uuid, xuid, name, updated_at: new Date().getTime() }
-        let data = {
-            playerInfo,
-            'minecraft:custom': custom,
-            'minecraft:mined': mined,
-            'minecraft:broken': broken,
-            'minecraft:crafted': crafted,
-            'minecraft:used': used,
-            'minecraft:picked_up': picked_up,
-            'minecraft:dropped': dropped,
-            'minecraft:killed': killed,
-            'minecraft:killed_by': killed_by,
+        if (typeof type === 'undefined') {
+            let playerInfo = { uuid, xuid, name, updated_at: new Date().getTime() }
+            let data = {
+                playerInfo,
+                'minecraft:custom': custom,
+                'minecraft:mined': mined,
+                'minecraft:broken': broken,
+                'minecraft:crafted': crafted,
+                'minecraft:used': used,
+                'minecraft:picked_up': picked_up,
+                'minecraft:dropped': dropped,
+                'minecraft:killed': killed,
+                'minecraft:killed_by': killed_by,
+            }
+            return JSON.stringify(data)
         }
-
-        File.writeTo(`${DATA_PATH}${this.uuid}.json`, JSON.stringify(data))
+        switch (type) {
+            case StatsType.Custom:
+                return JSON.stringify(custom)
+            case StatsType.Broken:
+                return JSON.stringify(broken)
+            case StatsType.Crafted:
+                return JSON.stringify(crafted)
+            case StatsType.Used:
+                return JSON.stringify(used)
+            case StatsType.Picked_Up:
+                return JSON.stringify(picked_up)
+            case StatsType.Mined:
+                return JSON.stringify(mined)
+            case StatsType.Dropped:
+                return JSON.stringify(dropped)
+            case StatsType.Killed:
+                return JSON.stringify(killed)
+            case StatsType.Killed_By:
+                return JSON.stringify(killed_by)
+            default:
+                return null
+        }
+    }
+    save() {
+        let data = this.getJson()
+        File.writeTo(`${DATA_PATH}${this.uuid}.json`, data)
     }
     private _add(obj: object, e: string, num: number = 1) {
         if (typeof obj === 'undefined') obj = {}
@@ -682,13 +503,13 @@ let foods = [
 ]
 //监听玩家进服
 mc.listen('onJoin', (player) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerData = new PlayerData(player)
     playersMap.set(player.uuid, playerData)
 })
 //监听玩家退服
 mc.listen('onLeft', (player) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addCustomOthers(CustomOtherType.leave_game)
@@ -698,14 +519,14 @@ mc.listen('onLeft', (player) => {
 //监听玩家破坏方块
 mc.listen('onDestroyBlock', (player, block) => {
     if (player.isCreative) return
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addStats(StatsType.Mined, block.type)
 })
 //监听玩家捡起物品
 mc.listen('onTakeItem', (player, entity, item) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     if (!item) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
@@ -713,14 +534,14 @@ mc.listen('onTakeItem', (player, entity, item) => {
 })
 //监听玩家扔出物品
 mc.listen('onDropItem', (player, item) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addStats(StatsType.Dropped, item.type, item.count)
     playerDt.addCustomOthers(CustomOtherType.drop)
 })
 mc.listen('onPlayerDie', (player, source) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     if (source != null) {
@@ -735,7 +556,7 @@ mc.listen('onMobDie', (mob, source, cause) => {
     if (source == null) return
     let player = source.toPlayer()
     if (player == null) return
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     if (mob.type === 'minecraft:player') {
@@ -746,7 +567,7 @@ mc.listen('onMobDie', (mob, source, cause) => {
     }
 })
 mc.listen('onChangeSprinting', (player, sprinting) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.changeSprinting(sprinting)
@@ -755,7 +576,7 @@ mc.listen('onRide', (entity1, entity2) => {
     if (!entity1.isPlayer()) return
     let player = entity1.toPlayer()
     if (player == null) return
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.setRidingEntity(entity2.type)
@@ -766,7 +587,7 @@ mc.listen('onRide', (entity1, entity2) => {
  * 吸收/抵挡伤害
  */
 mc.listen('onAttackEntity', (player, entity, damage) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addCustomDamage(CustomDamageType.dealt, Math.round(damage * 10))
@@ -775,7 +596,7 @@ mc.listen('onMobHurt', (mob, source, damage, cause) => {
     if (!mob.isPlayer()) return
     let player = mob.toPlayer()
     if (player == null) return
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addCustomDamage(CustomDamageType.taken, Math.round(damage * 10))
@@ -783,7 +604,7 @@ mc.listen('onMobHurt', (mob, source, damage, cause) => {
 
 //监听玩家与方块交互
 mc.listen('onBlockInteracted', (player, block) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     let type = block.type.split(':')
@@ -835,7 +656,7 @@ mc.listen('onBlockInteracted', (player, block) => {
 mc.listen('onOpenContainer', (player, block) => {
     //工作台合成
     if (block.type === 'minecraft:crafting_table') {
-        if(player.isSimulatedPlayer()) return
+        if (player.isSimulatedPlayer()) return
         let playerDt = playersMap.get(player.uuid)
         if (typeof playerDt === 'undefined') return
         playerDt.addCustomInteract(CustomInteractType.crafting_table)
@@ -843,20 +664,20 @@ mc.listen('onOpenContainer', (player, block) => {
 })
 //监听玩家放置方块
 mc.listen('afterPlaceBlock', (player, block) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addStats(StatsType.Used, block.type)
 })
 mc.listen('onAte', (player, item) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addStats(StatsType.Used, item.type)
 })
 //监听玩家获得效果(袭击)
 mc.listen('onEffectAdded', (player, effectName) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     if (effectName === 'minecraft:effect.bad_men') playerDt.addCustomOthers(CustomOtherType.raid_trigger)
@@ -865,7 +686,7 @@ mc.listen('onEffectAdded', (player, effectName) => {
 //监听玩家点击方块(音符盒)
 mc.listen('onStartDestroyBlock', (player, block) => {
     if (block.type === 'minecraft:noteblock') {
-        if(player.isSimulatedPlayer()) return
+        if (player.isSimulatedPlayer()) return
         let playerDt = playersMap.get(player.uuid)
         if (typeof playerDt === 'undefined') return
         playerDt.addCustomOthers(CustomOtherType.play_noteblock)
@@ -873,7 +694,7 @@ mc.listen('onStartDestroyBlock', (player, block) => {
 })
 //监听玩家使用物品
 mc.listen('onUseItemOn', (player, item, block) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     switch (block.type) {
         case 'minecraft:cake':
             cakeMap.add(block.pos, player.uuid)
@@ -1001,7 +822,7 @@ mc.listen('onProjectileHitBlock', () => {
      */
 })
 mc.listen('onBedEnter', (player, pos) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addCustomOthers(CustomOtherType.sleep_in_bed)
@@ -1012,7 +833,7 @@ mc.listen('onBedEnter', (player, pos) => {
 
 // })
 mc.listen('onJump', (player) => {
-    if(player.isSimulatedPlayer()) return
+    if (player.isSimulatedPlayer()) return
     let playerDt = playersMap.get(player.uuid)
     if (typeof playerDt === 'undefined') return
     playerDt.addCustomOthers(CustomOtherType.jump)
@@ -1023,8 +844,11 @@ mc.listen('onTick', () => {
     })
 })
 
-function getPlayerData() {
-
+function getPlayerData(uuid: string, type?: StatsType) {
+    if (!playersMap.has(uuid)) return null
+    let playerData = playersMap.get(uuid)
+    if (typeof playerData === 'undefined') return null
+    return playerData.getJson(type)
 }
 
-ll.exports(getPlayerData, 'SKS-Score', 'getPlayerData')
+ll.exports(getPlayerData, 'SKS-Stats', 'getPlayerData')
